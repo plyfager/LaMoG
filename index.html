@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-container {
+      width: 100%;
+      text-align: center;
+      padding: 1em;
+    }
+
+    button {
+      position: fixed;
+      right: 15px;
+      top: 50%;
+      height: 50px;
+      width: 100px;
+      font-size: 14px;
+      background-color: #008080;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    h1, h2 {
+      color: #008080;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    .empty-row {
+      height: 20px;
+    }
+
+    .video-cell {
+      width: 200px;
+    }
+
+    .video-caption {
+      font-size: 16px;
+    }
+
+    .large-font {
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 24px;
+      /* color: #ff0000; */
+    }
+
+    @media only screen and (max-width: 1200px) {
+      .page-container {
+        width: 100%;
+        overflow-x: auto;
+      }
+    }
+
+    @media only screen and (min-width: 1201px) {
+      .page-container {
+        width: 1200px; /* 或者你想要的固定宽度 */
+        margin: 0 auto; /* 居中显示，如果需要 */
+      }
+    }
+
+      .scrollable-text {
+        height: 240px; /* 与视频高度一致 */
+        overflow-y: scroll;
+        padding-right: 10px; /* 添加一点内边距以避免文本紧贴边缘 */
+        word-wrap: break-word; /* 确保长单词能够换行 */
+        word-break: break-all; /* 确保非常长的单词或链接在必要时断行 */
+        text-align: left; /* 添加这个属性让文本左对齐 */
+      }
+    
+      .video-cell {
+        text-align: center;
+        vertical-align: top;
+      }
+    
+      /* 可选：为滚动条样式设置 */
+      .scrollable-text::-webkit-scrollbar {
+        width: 8px;
+      }
+    
+      .scrollable-text::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 4px;
+      }
+    
+      .scrollable-text::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+      }
+
+  </style>
+
+  <title>Lagrangian Motion Fields for Long-term Motion Generation</title>
+</head>
+
+<body>
+  <button class="custom-button" type="button" onclick="scrollToTop()">Back to top</button>
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+  
+  <div class="page-container">
+    <h1>Lagrangian Motion Fields for Long-term Motion Generation</h1>
+    <h2>Supplementary Materials</h2>
+
+    <ul>
+      <li><a href="#" onclick="scrollToSection('m2d')">Long-Term Music-to-Dance</a></li>
+      <li><a href="#" onclick="scrollToSection('t2m')">Long-Term Text-to-Motion</a></li>
+      <li><a href="#" onclick="scrollToSection('app-ILP')">Applications: Infinity Loop of Dance</a></li>
+      <li><a href="#" onclick="scrollToSection('app-DCT2M')">Applications: Duration Controlled Text-to-Motion</a></li>
+    </ul>
+    
+    <script>
+      function scrollToSection(sectionId) {
+        var targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    </script>
+
+    <!-- BEGIN SECTION -->
+    <hr>
+    <h2 id="m2d" align="left">Long-Term Music-to-Dance</h2>
+    <table width="1200" align="center">
+      <tbody>
+        <tr class="empty-row"></tr>
+
+        <tr>
+          <th class="video-cell">
+            <video width="1000" src="assets/m2d/comp_092.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          </th>
+        </tr>
+
+        <tr>
+          <th class="video-cell">
+            <video width="1000" src="assets/m2d/comp_193.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          </th>
+        </tr>
+
+        <tr>
+          <th class="video-cell">
+            <video width="1000" src="assets/m2d/comp_063.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          </th>
+        </tr>
+        <tr class="video-caption">
+          <th>Lodge vs Lodge + Ours</th>
+        </tr>
+        <!-- ... (others) ... -->
+        <tr> <td><br></td> </tr>
+      </tbody>
+    </table>
+    <!-- END SECTION -->
+
+    <hr>
+    <h2 id="t2m" align="left">Long-Term Text-to-Motion</h2>
+    <table width="1200" align="center">
+      <tbody>
+        <tr>
+          <th class="text">
+            <div class="scrollable-text">
+              <p>
+                1.	The person walked in and sat down immediately.<br>
+                2.	Then raised his hands and started to warm them up.<br>
+                3.	Then walked in a counterclockwise circle while holding their left hand up at eye level.<br>
+                4.	Then walked from the left side to the right side and hopped over an obstacle.<br>
+                5.	Then walked slightly forward, turned around, and ran backward.<br>
+                6.	Then walked in an anti-clockwise fashion.<br>
+                7.	Then walked up the stairs.<br>
+                8.	Then stood in a pose for prayer.<br>
+                9.	Then did poses with his arms.<br>
+                10.	Then waved with a circular motion using their left hand.<br>
+              </p>
+            </div>
+          </th>
+
+          <th>
+            <tr>
+              <th class="video-cell">
+                <video width="1200" src="assets/humanml3d_mp/comp_mdm_92.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+            <tr class="video-caption">
+              <th>MDM vs MDM + Ours</th>
+            </tr>
+          </th>
+
+          <th>
+            <tr>
+              <th class="video-cell">
+                <video width="1200" src="assets/humanml3d_mp/comp_t2mgpt_92.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+            <tr class="video-caption">
+              <th>T2M-GPT vs T2M-GPT + Ours</th>
+            </tr>
+          </th>
+        </tr>
+        <tr>
+          <th class="text">
+            <div class="scrollable-text">
+              <p>
+                1.	The figure appears to catch and throw a ball twice, then misses the ball and goes to get it.<br>
+                2.	Then picks up an object from their right, holds it up to their left, before placing it back down.<br>
+                3.	Then sways from right to left.<br>
+                4.	Then this person is boxing with their right and left hand.<br>
+                5.	Then grabs something and tries to open it.<br>
+                6.	Then this person is practicing their tennis forehand.<br>
+                7.	Then this person is walking to the left and then to the right.<br>
+                8.	Then this person is walking forwards.<br>
+                9.	Then stretches from left to right.<br>
+                10.	Then this person is making gestures.<br>
+              </p>
+            </div>
+          </th>
+
+          <th>
+            <tr>
+              <th class="video-cell">
+                <video width="1200" src="assets/humanml3d_mp/comp_mdm_135.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+            <tr class="video-caption">
+              <th>MDM vs MDM + Ours</th>
+            </tr>
+          </th>
+
+          <th>
+            <tr>
+              <th class="video-cell">
+                <video width="1200" src="assets/humanml3d_mp/comp_t2mgpt_135.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+            <tr class="video-caption">
+              <th>T2M-GPT vs T2M-GPT + Ours</th>
+            </tr>
+          </th>
+        </tr>
+
+        <tr>
+          <th class="text">
+            <div class="scrollable-text">
+              <p>
+                1.	A person dances with their arms out in front of them, like a salsa.<br>
+                2.	Then twists their body and punches the air.<br>
+                3.	Then sits cross-legged before switching the cross between legs repeatedly.<br>
+                4.	Then this person is moving something around.<br>
+                5.	Then turns around, shifts to their right, then bends down before jumping up and to the right.<br>
+                6.	Then takes a clumsy walk slightly sideways.<br>
+                7.	Then walks in a very straight line with his arms outstretched at his sides.<br>
+                8.	Then rows a boat while standing.<br>
+                9.	Then walks forward and squats.<br>
+                10.	Then the person is doing arm exercises.<br>
+              </p>
+            </div>
+          </th>
+
+          <th>
+            <tr>
+              <th class="video-cell">
+                <video width="1200" src="assets/humanml3d_mp/comp_mdm_44.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+            <tr class="video-caption">
+              <th>MDM vs MDM + Ours</th>
+            </tr>
+          </th>
+
+          <th>
+            <tr>
+              <th class="video-cell">
+                <video width="1200" src="assets/humanml3d_mp/comp_t2mgpt_44.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+            <tr class="video-caption">
+              <th>T2M-GPT vs T2M-GPT + Ours</th>
+            </tr>
+          </th>
+        </tr>
+              <!-- ... (others) ... -->
+        <tr> <td><br></td> </tr>
+      </tbody>
+    </table>
+
+    <hr>
+    <h2 id="app-ILP" align="left">Applications: Infinity Loop of Dance</h2>
+    <table width="1200" align="center">
+      <tbody>
+        <tr class="empty-row"></tr>
+
+        <tr>
+          <th class="video-cell">
+            <video width="500" src="assets\loop_dance\063.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          </th>
+          <th class="video-cell">
+            <video width="500" src="assets\loop_dance\132.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          </th>
+        </tr>
+
+        <tr>
+          <th class="video-cell">
+            <video width="500" src="assets\loop_dance\143.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          </th>
+          <th class="video-cell">
+            <video width="500" src="assets\loop_dance\161.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          </th>
+        </tr>
+
+        <tr>
+          <th class="video-cell">
+            <video width="500" src="assets\loop_dance\179.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          </th>
+          <th class="video-cell">
+            <video width="500" src="assets\loop_dance\193.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          </th>
+        </tr>
+
+      </tbody>
+    </table>
+
+        <hr>
+        <h2 id="app-DCT2M" align="left">Applications: Duration Controlled Text-to-Motion</h2>
+        <table width="1200" align="center">
+          <tbody>
+            <tr class="empty-row"></tr>
+        
+            <tr class="large-font">
+              <td colspan="3">A person is crouched down and walking around sneakily.
+              </td>
+            </tr>
+    
+            <tr>
+              <th class="video-cell">
+                <video width="330" src="assets\length_control\100_1_1.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+
+              <th class="video-cell">
+                <video width="330" src="assets\length_control\150_1_2.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+
+              <th class="video-cell">
+                <video width="330" src="assets\length_control\200_1_1.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+
+            <tr class="video-caption">
+              <th>60 Frames</th>
+              <th>120 Frames</th>
+              <th>180 Frames</th>
+            </tr>
+
+            <tr class="large-font">
+              <td colspan="3">A person turning around and happy about the acceptance of paper.
+              </td>
+            </tr>
+    
+            <tr>
+              <th class="video-cell">
+                <video width="330" src="assets\length_control\100_18_1.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+
+              <th class="video-cell">
+                <video width="330" src="assets\length_control\150_18_0.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+
+              <th class="video-cell">
+                <video width="330" src="assets\length_control\200_18_1.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+
+            <tr class="video-caption">
+              <th>60 Frames</th>
+              <th>120 Frames</th>
+              <th>180 Frames</th>
+            </tr>
+
+          </tbody>
+        </table>
+        <!-- ... (others) ... -->
+        <tr> <td><br></td> </tr>
+      </tbody>
+    </table>
+    <!-- END SECTION -->
+
+  </div>
+</body>
+
+</html>
